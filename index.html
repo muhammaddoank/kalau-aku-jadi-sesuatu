@@ -3,7 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Flipbook</title>
+<title>Kalau Aku Jadi Sesuatu: Antologi Cerita</title>
+<meta name="title" content="Kalau Aku Jadi Sesuatu: Antologi Cerita">
+<meta name="description" content="Karya murid Kelas 3 MI Pembangunan UIN Jakarta. Baca langsung secara online.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="book">
+<meta property="og:title" content="Kalau Aku Jadi Sesuatu: Antologi Cerita">
+<meta property="og:description" content="Karya murid Kelas 3 MI Pembangunan UIN Jakarta. Baca langsung secara online.">
+<meta property="og:image" content="https://raw.githubusercontent.com/muhammaddoank/kalau-aku-jadi-sesuatu/main/logo.png">
+<meta property="og:image:width" content="447">
+<meta property="og:image:height" content="447">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Logo MI Pembangunan UIN Jakarta">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kalau Aku Jadi Sesuatu: Antologi Cerita">
+<meta name="twitter:description" content="Karya murid Kelas 3 MI Pembangunan UIN Jakarta. Baca langsung secara online.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/muhammaddoank/kalau-aku-jadi-sesuatu/main/logo.png">
 <style>
 :root{
   --bg1:#e4fbf3;--bg2:#e2eeff;--ink:#12303a;--muted:#5b7a85;
@@ -29,7 +51,7 @@ body{
 header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 14px 0;padding:10px 16px;border-radius:18px}
 h1{font-size:clamp(15px,2.4vw,20px);font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;min-width:0}
 h1 span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.logo{width:30px;height:30px;border-radius:10px;flex:none;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--a1),var(--a2))}
+.logo{width:32px;height:32px;flex:none;object-fit:contain;display:block}
 .btn{border:0;cursor:pointer;color:var(--ink);background:transparent;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:6px;
   height:40px;min-width:40px;padding:0 12px;border-radius:12px;text-decoration:none;transition:transform .15s,background .15s}
 .btn:hover{background:rgba(0,184,148,.15)}
@@ -56,7 +78,7 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 <body>
 
 <header class="glass">
-  <h1><div class="logo"><svg style="stroke:#fff" viewBox="0 0 24 24"><path d="M2 5.5C4.5 4 8 4 12 6c4-2 7.5-2 10-.5V19c-2.500-1.500-6-1.500-10 .5-4-2-7.500-2-10-.5z"/><path d="M12 6v13.500"/></svg></div><span id="title">Flipbook</span></h1>
+  <h1><img src="logo.png" alt="Logo MI Pembangunan" class="logo"><span id="title">Flipbook</span></h1>
 </header>
 
 <main id="stage"><div id="book"></div></main>
@@ -74,7 +96,7 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 <script>
 /* ====== PENGATURAN: sesuaikan di sini ====== */
 const CONFIG = {
-  title: 'Kalau Aku Jadi Sesuatu',
+  title: 'Kalau Aku Jadi Sesuatu: Antologi Cerita',
   total: 168,                       // jumlah halaman
   path: n => `pages/${String(n).padStart(3,'0')}.webp`,  // pages/001.webp ... pages/168.webp
   w: 800, h: 1135                   // rasio halaman A5 (148 x 210 mm)
