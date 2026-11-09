@@ -1,0 +1,27 @@
+name: Konversi PDF ke WebP
+on:
+  workflow_dispatch:
+  push:
+    paths: ['sumber/dokumen.pdf']
+permissions:
+  contents: write
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instal alat
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils webp
+      - name: Konversi
+        run: |
+          rm -rf pages && mkdir pages
+          pdftoppm -r 130 -png sumber/dokumen.pdf tmp
+          for f in tmp-*.png; do n=${f#tmp-}; n=${n%.png}; cwebp -q 80 -quiet "$f" -o "pages/$n.webp"; done
+          rm tmp-*.png
+      - name: Simpan hasil
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add pages
+          git commit -m "Generate halaman WebP" || exit 0
+          git push
