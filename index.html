@@ -119,7 +119,7 @@ const pf = new St.PageFlip(book, {
   showCover: true, maxShadowOpacity: .45, flippingTime: 700,
   mobileScrollSupport: false, startPage: start
 });
-pf.loadFromHtml(document.querySelectorAll('.page'));
+pf.loadFromHTML(document.querySelectorAll('.page'));
 
 function update(i) {
   $('range').value = i + 1; $('num').value = i + 1;
