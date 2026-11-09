@@ -15,7 +15,7 @@ jobs:
       - name: Konversi
         run: |
           rm -rf pages && mkdir pages
-          pdftoppm -r 130 -png sumber/dokumen.pdf tmp
+          pdftoppm -r 200 -png sumber/dokumen.pdf tmp
           for f in tmp-*.png; do n=${f#tmp-}; n=${n%.png}; cwebp -q 80 -quiet "$f" -o "pages/$n.webp"; done
           rm tmp-*.png
       - name: Simpan hasil
