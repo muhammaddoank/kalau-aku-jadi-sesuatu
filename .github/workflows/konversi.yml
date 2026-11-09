@@ -24,4 +24,5 @@ jobs:
           git config user.email "actions@github.com"
           git add pages
           git commit -m "Generate halaman WebP" || exit 0
+          git pull --rebase
           git push
